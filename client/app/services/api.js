@@ -4,13 +4,12 @@ const API = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-// Attach token automatically
 API.interceptors.request.use((req) => {
   if (typeof window !== "undefined") {
-    const user = localStorage.getItem("user");
+    const userInfo = localStorage.getItem("userInfo");
 
-    if (user) {
-      const token = JSON.parse(user).token;
+    if (userInfo) {
+      const token = JSON.parse(userInfo).token;
 
       req.headers.Authorization = `Bearer ${token}`;
     }
