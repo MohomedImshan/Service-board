@@ -34,7 +34,7 @@ export default function LoginPage() {
       localStorage.setItem("token", res.data.token);
 
       // optional: save user info
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      localStorage.setItem("userInfo", JSON.stringify(res.data));
 
       router.push("/");
     } catch (err) {
