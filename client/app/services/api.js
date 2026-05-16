@@ -4,16 +4,19 @@ const API = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-export default API;
-// Attach JWT token automatically
-API.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+// Attach token automatically
+API.interceptors.request.use((req) => {
+  if (typeof window !== "undefined") {
+    const user = localStorage.getItem("user");
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+    if (user) {
+      const token = JSON.parse(user).token;
+
+      req.headers.Authorization = `Bearer ${token}`;
+    }
   }
 
-  return config;
+  return req;
 });
 
 export default API;
