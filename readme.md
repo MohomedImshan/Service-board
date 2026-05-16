@@ -47,7 +47,7 @@ service-board/
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/service-board.git
+git clone https://github.com/MohomedImshan/service-board.git
 cd service-board
 
 2.Backend setup (server)
