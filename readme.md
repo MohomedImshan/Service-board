@@ -32,3 +32,42 @@ A full-stack service request management system built using:
 ---
 
 ## 🧱 Project Structure
+service-board/
+│
+├── client/ # Next.js frontend
+├── server/ # Express backend
+└── README.md
+
+---
+
+## ⚙️ Setup Instructions
+
+---
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/service-board.git
+cd service-board
+
+2.Backend setup (server)
+cd server
+npm install
+Create .env file:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+Run backend:
+npm run dev
+
+Backend runs at:
+
+http://localhost:5000
+3️⃣ Frontend Setup (Client)
+cd ../client
+npm install
+npm run dev
+
+Frontend runs at:
+
+http://localhost:3000
